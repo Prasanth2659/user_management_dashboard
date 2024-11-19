@@ -1,19 +1,14 @@
-.App {
-
-  text-align: center;
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
-.main-app{
+
+.main-app {
   padding: 50px;
-}
-.App-logo {
-  height: 40min;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -29,23 +24,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 20;
-  padding: 20;
-  background-color: #f9f9f9;
-  color: #333;
 }
 
 .container {
@@ -160,8 +138,43 @@ form button {
   color: #007bff;
 }
 
+/* Responsive Design for Medium Devices (Tablets) */
+@media screen and (max-width: 1024px) {
+  .main-app {
+    padding: 40px;
+  }
 
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  table th,
+  table td {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  button {
+    padding: 7px 12px;
+    font-size: 1rem;
+  }
+
+  form {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+/* Responsive Design for Tablets (Small Tablets and Large Phones) */
 @media screen and (max-width: 768px) {
+  .main-app {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
   table th,
   table td {
     font-size: 0.9rem;
@@ -175,29 +188,104 @@ form button {
 
   form {
     width: 90%;
+    padding: 15px;
   }
 }
 
+/* Responsive Design for Mobile Phones (Extra-Small Devices) */
 @media screen and (max-width: 480px) {
+  .main-app {
+    padding: 10px;
+  }
+
   header h1 {
     font-size: 1.5rem;
   }
 
   table {
-    font-size: 0.8rem;
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody, tr, td, th {
+    display: block;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    text-align: center;
   }
 
   button {
     padding: 4px 8px;
     font-size: 0.8rem;
   }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
-.heading{
+/* Responsive Design for Large Devices */
+@media screen and (min-width: 1200px) {
+  .main-app {
+    padding: 60px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  table th,
+  table td {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+  }
+
+  form {
+    width: 60%;
+    padding: 25px;
+  }
+}
+
+.heading {
   color: white;
   text-align: center;
 }
-.addBtn{
+
+.addBtn {
   display: flex;
   justify-content: center;
 }
