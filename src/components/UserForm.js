@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import './userlist.css'
+import '../App.css'
 
 const UserForm = ({ user, onCancel, onSave }) => {
   const [formData, setFormData] = useState({
@@ -24,9 +26,9 @@ const UserForm = ({ user, onCancel, onSave }) => {
   };
 
   return (
-    <div >
+    <div className='user-form-section'>
       <h2 className='Heading'>{user ? 'Edit User' : 'Add User'}</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='inputs-sections'>
         <input
           type="text"
           name="firstName"
@@ -58,10 +60,13 @@ const UserForm = ({ user, onCancel, onSave }) => {
           placeholder="Department"
           onChange={handleChange}
         />
-        <button type="submit">Save</button>
-        <button type="button" onClick={onCancel}>
-          Cancel
-        </button>
+        <div className='btn-section'>
+          <button type="submit" className='cancleBtn'>Save</button>
+          <button type="button" className='cancleBtn' onClick={onCancel}>
+            Cancel
+          </button>
+        </div>
+        
       </form>
     </div>
   );
